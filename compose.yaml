@@ -19,4 +19,5 @@ services:
       - ./telegram_handler.py:/telegram_handler.py
       - ./main.py:/main.py
       - ./instagram_handler.py:instagram_handler.py
+      - ./requirements.txt:requirements.txt
     command: main.sh
