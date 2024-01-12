@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  instatelegram:
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    environment:
+      - INSTAGRAM_USERNAME: test
+      - INSTAGRAM_PASSWORD: test
+      - TELEGRAM_BOT_TOKEN: test
+      - TELEGRAM_CHANNEL_ID: test
+      - INSTAGRAM_USERNAME: test
+      - INSTAGRAM_PASSWORD: test
+      - TELEGRAM_BOT_TOKEN: test
+    user: 1026:101
+    volumes:
+      - ./checkpoint:/checkpoint
+      - ./telegram_handler.py:/telegram_handler.py
+      - ./main.py:/main.py
+      - ./instagram_handler.py:instagram_handler.py
+    command: main.sh
